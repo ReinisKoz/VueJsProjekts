@@ -1,0 +1,184 @@
+/* Redesigned styles for the todo application with a modern and polished look */
+:root {
+    --primary: #6200EA;
+    --secondary: #03DAC6;
+    --background: #F5F5F5;
+    --text-dark: #212121;
+    --text-light: #757575;
+    --border-radius: 8px;
+    --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-dark: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text-dark);
+    padding: 2rem;
+    line-height: 1.6;
+}
+
+section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    background-color: #FFFFFF;
+    box-shadow: var(--shadow-light);
+}
+
+h3, h4 {
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+    color: var(--text-dark);
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-light);
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #FFFFFF;
+    background-color: var(--primary);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    box-shadow: var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #3700B3;
+    box-shadow: var(--shadow-dark);
+}
+
+button.secondary {
+    background-color: var(--secondary);
+    color: #000000;
+}
+
+button.secondary:hover {
+    background-color: #018786;
+}
+
+.todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFFFFF;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.todo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-dark);
+}
+
+.todo-item .content {
+    flex: 1;
+    margin-right: 1rem;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.todo-item.done .content {
+    text-decoration: line-through;
+    color: var(--text-light);
+}
+
+.todo-item .actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.todo-item .actions button {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: var(--border-radius);
+}
+
+.todo-item .actions button.delete {
+    background-color: #D32F2F;
+}
+
+.todo-item .actions button.delete:hover {
+    background-color: #B71C1C;
+}
+
+.todo-item .actions button.edit {
+    background-color: var(--secondary);
+    color: #000000;
+}
+
+.todo-item .actions button.edit:hover {
+    background-color: #018786;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    h4 {
+        font-size: 1.125rem;
+    }
+
+    .todo-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .todo-item .actions {
+        margin-top: 0.5rem;
+        width: 100%;
+        justify-content: space-between;
+    }
+}
